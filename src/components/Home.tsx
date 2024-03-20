@@ -56,7 +56,10 @@ const Home = () => {
       const token = localStorage.getItem('token');
 
       if (!token) {
-        console.error('No hay token disponible');
+        showAlert('No hay token disponible');
+        return;
+      } else if (title === '' || description === '') {
+        showAlert('Ingresa valores válidos');
         return;
       }
 
